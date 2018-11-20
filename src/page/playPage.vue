@@ -59,18 +59,21 @@ export default {
     }
   },
   watch:{
-    nowtime(val){
-      console.log("当前时间是"+val)
-    },
-    alltime(a){
-      console.log("总时间是"+a)
-    },
-    progs(a){
-      console.log("进度条"+a)
-    }
+    // nowtime(val){
+    //   console.log("当前时间是"+val)
+    // },
+    // alltime(a){
+    //   console.log("总时间是"+a)
+    // },
+    // progs(a){
+    //   console.log("进度条"+a)
+    // }
   },
   computed:{
     progs(){
+      // return parseInt(this.nowtime/this.alltime)
+      //进度条做到事件监听这步就先暂停，参考博客：
+      //https://blog.csdn.net/qwezxc24680/article/details/78227728
       // return parseInt(this.nowtime/this.alltime)
       //进度条做到事件监听这步就先暂停，参考博客：
       //https://blog.csdn.net/qwezxc24680/article/details/78227728
