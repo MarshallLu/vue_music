@@ -1,0 +1,12 @@
+@mixin wh($width,$height){
+  width: $width;
+  height: $height;
+}
+
+@mixin hc($line-height){
+  text-align: center;
+  line-height: $line-height;
+}
+
+
+// mixin.scss
