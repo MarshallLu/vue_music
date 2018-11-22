@@ -8,16 +8,19 @@
         我不能忘记你 &nbsp&nbsp 林忆莲
       </div>
       <div class="bar-icon">
-        <x-icon type="ios-circle-outline" size="30" @click.native="show()"></x-icon>
+        <x-icon v-show="mctrl" type="ios-circle-filled" size="30" @click.native="show()"></x-icon>
+        <x-icon v-show="!mctrl" type="ios-circle-outline" size="30" @click.native="show()"></x-icon>
       </div>
       <div class="bar-icon">
-        <x-icon type="ios-arrow-up" size="30" @click.native="show()"></x-icon>
+        <x-icon type="ios-arrow-up" size="30" ></x-icon>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
+
 export default {
   data(){
     return{
@@ -27,9 +30,17 @@ export default {
   mounted(){
     // alert("marshall")
   },
+  computed:{
+    ...mapState([
+      'mctrl'
+    ])
+  },
   methods:{
+    ...mapMutations([
+      'ctrlMusic'
+    ]),
     show(){
-      alert("music")
+      this.ctrlMusic(false);
     },
     barClick(){
       this.$router.push('/playPage')

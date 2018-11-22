@@ -3,7 +3,8 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-  mlist: []
+  mlist: [],
+  mctrl: false //记录播放暂停，以及按钮显示隐藏
 }
 
 const mutations = {
@@ -23,6 +24,9 @@ const mutations = {
         state.mlist.splice(i,1);
       }
     }
+  },
+  ctrlMusic(state,bol){
+    state.mctrl = bol;
   }
 }
 
