@@ -1,8 +1,6 @@
 <template>
   <div>
-    <audio ref="audios" src="/static/xufei.mp3"></audio>
     <div class="m-cell"  v-for="(item,index) in musiclist" @click="getIdx(index)">
-
       <div class="cell-top">
         {{item.songs}}
       </div>
@@ -14,7 +12,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
+import { mapMutations } from 'vuex'
 
 export default {
   data(){
@@ -24,33 +22,20 @@ export default {
   },
   props:['musiclist']
   ,
-  watch:{
-    mctrl(n,o){     //要是出错，考虑下换成ES5的写法
-      if(!n){
-        this.$refs.audios.pause();
-      }
-    }
-  },
-  computed:{
-    ...mapState([
-      'mctrl'
-    ])
-  },
   methods:{
     ...mapMutations([
       'gtMusic', 'ctrlMusic'
     ]),
     getIdx(index){
-      this.$refs.audios.play();
-      this.ctrlMusic(true);
-      // debugger
       let mclist = {
           mid: this.musiclist[index].mid,
           songs: this.musiclist[index].songs,
           singer: this.musiclist[index].singer,
-          album: this.musiclist[index].album
+          album: this.musiclist[index].album,
+          msrc: this.musiclist[index].msrc
       }
       this.gtMusic(mclist)
+      this.ctrlMusic(true);
     }
   }
 }

@@ -5,11 +5,11 @@
     </div>
     <div class="music-bar">
       <div class="bar-tit" @click="barClick()">
-        我不能忘记你 &nbsp&nbsp 林忆莲
+        {{mlist[0].songs}}&nbsp&nbsp{{mlist[0].singer}}
       </div>
       <div class="bar-icon">
-        <x-icon v-show="mctrl" type="ios-circle-filled" size="30" @click.native="show()"></x-icon>
-        <x-icon v-show="!mctrl" type="ios-circle-outline" size="30" @click.native="show()"></x-icon>
+        <x-icon v-show="mctrl" type="ios-circle-filled" size="30" @click.native="ctrlMusic(false)"></x-icon>
+        <x-icon v-show="!mctrl" type="ios-circle-outline" size="30" @click.native="ctrlMusic(true)"></x-icon>
       </div>
       <div class="bar-icon">
         <x-icon type="ios-arrow-up" size="30" ></x-icon>
@@ -32,16 +32,13 @@ export default {
   },
   computed:{
     ...mapState([
-      'mctrl'
+      'mctrl', 'mlist'
     ])
   },
   methods:{
     ...mapMutations([
       'ctrlMusic'
     ]),
-    show(){
-      this.ctrlMusic(false);
-    },
     barClick(){
       this.$router.push('/playPage')
     }

@@ -4,33 +4,38 @@ export const musicData = Mock.mock('/musicData',{
   'song':[
     {
       'mid': 1,
-      'songs': '诱',
-      'singer': '林宥嘉',
-      'album': '大小说家'
+      'songs': '父亲写的散文诗',
+      'singer': '许飞',
+      'album': '父亲写的散文诗',
+      'msrc': 'xufei.mp3'
     },
     {
       'mid': 2,
-      'songs': '4号病房',
-      'singer': '林宥嘉',
-      'album': '大小说家'
+      'songs': '我喜欢上你时的内心活动',
+      'singer': '陈绮贞',
+      'album': '我喜欢上你时的内心活动',
+      'msrc': 'woxihuanni.mp3'
     },
     {
       'mid': 3,
-      'songs': '勉强幸福',
-      'singer': '林宥嘉',
-      'album': '大小说家'
+      'songs': '可乐',
+      'singer': '赵紫骅',
+      'album': '赵浴辰原创demo精选',
+      'msrc': 'kele.mp3'
     },
     {
       'mid': 4,
-      'songs': '飞',
-      'singer': '林宥嘉',
-      'album': '今日营业中'
+      'songs': '恋恋风尘',
+      'singer': '程璧',
+      'album': '恋恋风尘',
+      'msrc': 'lianlianfengcheng.mp3'
     },
     {
       'mid': 5,
-      'songs': '我不能忘记你',
-      'singer': '林忆莲',
-      'album': '我不能忘记你'
+      'songs': '别送我',
+      'singer': '陈鸿宇',
+      'album': '别送我',
+      'msrc': 'biesongwo.mp3'
     }
   ]
 
